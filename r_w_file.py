@@ -1,3 +1,5 @@
+import os.path
+
 def write_file(source, path):
     file = open(path, 'w')
     sup_str = ''
@@ -9,10 +11,15 @@ def write_file(source, path):
 
 
 def read_file(path):
-    file = open(path, 'r')
     result = {}
-    for line in file:
-        sup_arr = line.split()
-        result[sup_arr[0]] = {'name': sup_arr[1], 'surname': sup_arr[2], 'class': sup_arr[3]}
-    file.close()
+    if(os.path.lexists(path)):
+        file = open(path, 'r')
+        for line in file:
+            sup_arr = line.split()
+            result[sup_arr[0]] = {'name': sup_arr[1], 'surname': sup_arr[2], 'class': sup_arr[3]}
+        file.close()
+    else:
+        file = open(path, 'a')
+        file.writelines('')
+        file.close()
     return result
