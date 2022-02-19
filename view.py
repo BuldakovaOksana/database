@@ -1,18 +1,12 @@
-# import os
-
-import additional as ad
-
-# from database import path_txt as pt, data as dt
 
 def get_request():
-    frst_choice = int(input ('Выберите действие: \n'
-                    '\t1 - внести изменения в список\n'
-                    '\t2 - вывести данные\n'))
-    for f, k in ad.msg[frst_choice].items():
-        print(f'\t{f} - {k} ')
-    sec_choice = int(input())  
-    return ad.data_proc[frst_choice][sec_choice]
+    choice = (input ('Выберите действие: \n'
+                    '\t1 - Показать весь список\n'
+                    '\t2 - Добавить запись\n'
+                    '\t3 - Удалить запись\n'
+                    '\t4 - Показать список класса\n'
+                    '\t5 - Сортировка по алфавиту\n'
+                     '\t6 - Выход\n'))
+    return choice
 
-# func = get_request()
 
-print(get_request())
