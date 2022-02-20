@@ -1,4 +1,4 @@
-import Knot
+import knot
 import r_w_file
 import view
 
@@ -8,8 +8,8 @@ def start():
     number = ''
     while (number != '6'):
         number = view.get_request()
-        Knot.init(data, path_txt)
-        Knot.distribution(number)
+        knot.init(data, path_txt)
+        knot.distribution(number)
         print()
 
 
